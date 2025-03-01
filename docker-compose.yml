@@ -22,7 +22,6 @@ services:
       POSTGRES_DB: crewmeister_db
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./db/seed.sql:/docker-entrypoint-initdb.d/seed.sql
-
+      - ./src/db/seed.sql:/docker-entrypoint-initdb.d/seed.sql
 volumes:
   pgdata:
