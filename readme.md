@@ -13,7 +13,7 @@ This is a Node.js/Express CRUD API for managing absences and members, using Post
 
 - [Docker](https://www.docker.com/get-started) installed locally.
 
-## Getting Started
+## Getting Started with Local Set Up
 
 1. **Clone the repository:**
 
@@ -62,4 +62,18 @@ GET /api/members/:id – Get a specific member.
 POST /api/members – Create a new member. *nice to have
 PUT /api/members/:id – Update a member. *nice to have
 DELETE /api/members/:id – Delete a member. *nice to have
+```
+
+## Getting Started with the Staging API
+
+This REST API is deployed via Render Services. To use the endpoints, ensure that you update your API calls to use the correct URL. For example, to access absences, use the following endpoint:
+
+```js
+https://crewmeister-absence-api.onrender.com/api/absences
+```
+
+- For instance, to retrieve all absences, send a GET request like this:
+
+```js
+GET https://crewmeister-absence-api.onrender.com/api/absences  // Get all absences.
 ```
