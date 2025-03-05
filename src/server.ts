@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import absencesRoutes from "./routes/absences";
 import membersRoutes from "./routes/members";
 
@@ -7,6 +8,26 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+const allowedOrigins = [
+  "https://b-laztornex.github.io/blaztornex.github.io",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept",
+  })
+);
 
 app.use(express.json());
 
