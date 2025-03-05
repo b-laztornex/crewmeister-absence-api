@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const allowedOrigins = [
-  "https://b-laztornex.github.io/blaztornex.github.io",
+  "https://b-laztornex.github.io",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
 ];
